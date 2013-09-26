@@ -49,7 +49,6 @@ Diary.prototype.getEntry = function(id, callback) {
 
 //No support for edits yet
 Diary.prototype.saveEntry = function(data, callback) {
-console.dir(data);
 	this.db.transaction(
 		function(t) {
 			t.executeSql('insert into diary(title,body,image,published) values(?,?,?,?)', [data.title, data.body, data.image, new Date().getTime()],
